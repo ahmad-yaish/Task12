@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنظيم المهام اليومية</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/ar.min.js"></script>
+</head>
+<body>
+    <!-- صفحة البداية -->
+    <div class="container" id="start-section">
+        <header>
+            <h1>تنظيم المهام اليومية</h1>
+        </header>
+        <main>
+            <button id="start-button">ابدأ</button>
+        </main>
+    </div>
+
+    <!-- صفحة معلومات المستخدم -->
+    <div class="container" id="user-info-section" style="display: none;">
+        <header>
+            <h1>معلومات المستخدم</h1>
+        </header>
+        <main>
+            <form id="user-info-form">
+                <label for="username">اسم المستخدم:</label>
+                <input type="text" id="username" required>
+                <label for="age">العمر:</label>
+                <input type="number" id="age" required>
+                <div class="buttons">
+                    <button type="submit">أكمل</button>
+                    <button type="button" id="back-to-start-button">رجوع</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- صفحة الروتين اليومي -->
+    <div class="container" id="routine-section" style="display: none;">
+        <header>
+            <h1>الروتين اليومي</h1>
+        </header>
+        <main>
+            <form id="routine-form">
+                <label for="sleep-time">وقت النوم (24 ساعة):</label>
+                <input type="time" id="sleep-time" required>
+                <label for="wake-time">وقت الاستيقاظ (24 ساعة):</label>
+                <input type="time" id="wake-time" required>
+                <div id="additional-routines"></div>
+                <button type="button" id="add-routine-button">إضافة روتين آخر</button>
+                <div class="buttons">
+                    <button type="submit">أكمل</button>
+                    <button type="button" id="back-to-user-info-button">رجوع</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- صفحة إضافة المهام -->
+    <div class="container" id="task-section" style="display: none;">
+        <header>
+            <h1>إضافة المهام</h1>
+        </header>
+        <main>
+            <form id="task-form">
+                <label for="task-name">اسم المهمة:</label>
+                <input type="text" id="task-name" required>
+                <label for="task-duration">مدة المهمة (بالدقائق):</label>
+                <input type="number" id="task-duration" required>
+                <label for="task-count">عدد المهام:</label>
+                <input type="number" id="task-count" required>
+                <div class="buttons">
+                    <button type="submit">إضافة المهمة</button>
+                    <button type="button" id="back-to-routine-button">رجوع</button>
+                </div>
+            </form>
+            <button id="complete-tasks-button">أكمل</button>
+        </main>
+    </div>
+
+    <!-- صفحة الجدول الشهري -->
+    <div class="container" id="calendar-section" style="display: none;">
+        <header>
+            <h1>الجدول الشهري</h1>
+        </header>
+        <main>
+            <div id="calendar"></div>
+            <div class="buttons">
+                <button id="finish-button">حسناً</button>
+                <button type="button" id="back-to-tasks-button">رجوع</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- شاشة عرض المعلومات والمهام -->
+    <div class="container" id="main-section" style="display: none;">
+        <div class="user-info">
+            <div class="user-avatar">
+                <span id="user-initial">أ</span>
+            </div>
+            <h2 id="user-fullname">اسم المستخدم</h2>
+        </div>
+        <div class="task-list">
+            <h3>المهام</h3>
+            <ul id="tasks">
+                <li>مهمة 1</li>
+                <li>مهمة 2</li>
+                <li>مهمة 3</li>
+            </ul>
+        </div>
+        <div class="tips">
+            <h3>نصائح عامة</h3>
+            <p>قم بإنجاز المهام بتركيز لتحقيق أفضل النتائج.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
